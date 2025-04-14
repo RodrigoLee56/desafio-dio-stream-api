@@ -41,9 +41,15 @@ public class AppTestsApiStream {
 
 //	    Desafio 7 - Encontrar o segundo número maior da lista:
 //		Com a ajuda da Stream API, encontre o segundo número maior da lista e exiba o resultado no console.
-		Integer segundoNumero = numeros.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst()
-				.orElseThrow(() -> new NoSuchElementException("Não existe segundo maior número."));
+//		Integer segundoNumero = numeros.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst()
+//				.orElseThrow(() -> new NoSuchElementException("Não existe segundo maior número."));
+//		System.out.println(segundoNumero);
 
-		System.out.println(segundoNumero);
+//	    Desafio 8 - Somar os dígitos de todos os números da lista:
+//	   	Utilizando a Stream API, realize a soma dos dígitos de todos os números da lista e exiba o resultado no console.
+		int somaDosDigitos = numeros.stream()
+				.mapToInt(numero -> Integer.toString(numero).chars().map(Character::getNumericValue).sum()).sum();
+
+		System.out.println("Soma dos dígitos de todos os números: " + somaDosDigitos);
 	}
 }
