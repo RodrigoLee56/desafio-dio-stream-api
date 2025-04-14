@@ -19,10 +19,15 @@ public class AppTestsApiStream {
 
 //		Desafio 3 - Verifique se todos os números da lista são positivos:
 //		Com a ajuda da Stream API, verifique se todos os números da lista são positivos e exiba o resultado no console.
-		System.out.println(numeros.stream().map(n -> n > 0).collect(Collectors.toList()));
+//		System.out.println(numeros.stream().map(n -> n > 0).collect(Collectors.toList()));
+//
+//		boolean todosPositivos = numeros.stream().allMatch(n -> n > 0);
+//		System.out.println("Todos os números são positivos? " + todosPositivos);
+		
 
-		boolean todosPositivos = numeros.stream().allMatch(n -> n > 0);
-		System.out.println("Todos os números são positivos? " + todosPositivos);
+//		Desafio 4 - Remova todos os valores ímpares:
 
+//		Utilize a Stream API para remover os valores ímpares da lista e imprima a lista resultante no console.
+		numeros.stream().filter(n -> n % 2 == 0).forEach(System.out::println);
 	}
 }
