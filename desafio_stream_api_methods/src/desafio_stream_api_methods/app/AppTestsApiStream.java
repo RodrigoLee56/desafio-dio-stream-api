@@ -1,8 +1,9 @@
 package desafio_stream_api_methods.app;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.NoSuchElementException;
 
 public class AppTestsApiStream {
 	public static void main(String[] args) {
@@ -36,6 +37,13 @@ public class AppTestsApiStream {
 
 //	    Desafio 6 - Verificar se a lista contém algum número maior que 10:
 //		Utilize a Stream API para verificar se a lista contém algum número maior que 10 e exiba o resultado no console.
-		System.out.println("Existe algum número maior que 10? " + numeros.stream().anyMatch(n -> n > 10));
+//		System.out.println("Existe algum número maior que 10? " + numeros.stream().anyMatch(n -> n > 10));
+
+//	    Desafio 7 - Encontrar o segundo número maior da lista:
+//		Com a ajuda da Stream API, encontre o segundo número maior da lista e exiba o resultado no console.
+		Integer segundoNumero = numeros.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst()
+				.orElseThrow(() -> new NoSuchElementException("Não existe segundo maior número."));
+
+		System.out.println(segundoNumero);
 	}
 }
