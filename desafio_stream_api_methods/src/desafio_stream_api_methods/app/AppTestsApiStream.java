@@ -23,11 +23,15 @@ public class AppTestsApiStream {
 //
 //		boolean todosPositivos = numeros.stream().allMatch(n -> n > 0);
 //		System.out.println("Todos os números são positivos? " + todosPositivos);
-		
 
 //		Desafio 4 - Remova todos os valores ímpares:
 
 //		Utilize a Stream API para remover os valores ímpares da lista e imprima a lista resultante no console.
-		numeros.stream().filter(n -> n % 2 == 0).forEach(System.out::println);
+//		numeros.stream().filter(n -> n % 2 == 0).forEach(System.out::println);
+
+//		Desafio 5 - Calcule a média dos números maiores que 5:
+//		Com a Stream API, calcule a média dos números maiores que 5 e exiba o resultado no console.
+		System.out.println("Média dos números maiores que 5: "
+				+ numeros.stream().filter(n -> n > 5).mapToInt(Integer::intValue).average().orElse(0.0));
 	}
 }
