@@ -31,7 +31,11 @@ public class AppTestsApiStream {
 
 //		Desafio 5 - Calcule a média dos números maiores que 5:
 //		Com a Stream API, calcule a média dos números maiores que 5 e exiba o resultado no console.
-		System.out.println("Média dos números maiores que 5: "
-				+ numeros.stream().filter(n -> n > 5).mapToInt(Integer::intValue).average().orElse(0.0));
+//		System.out.println("Média dos números maiores que 5: "
+//				+ numeros.stream().filter(n -> n > 5).mapToInt(Integer::intValue).average().orElse(0.0));
+
+//	    Desafio 6 - Verificar se a lista contém algum número maior que 10:
+//		Utilize a Stream API para verificar se a lista contém algum número maior que 10 e exiba o resultado no console.
+		System.out.println("Existe algum número maior que 10? " + numeros.stream().anyMatch(n -> n > 10));
 	}
 }
